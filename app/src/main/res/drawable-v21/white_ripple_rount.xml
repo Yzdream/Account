@@ -1,0 +1,5 @@
+<ripple xmlns:android="http://schemas.android.com/apk/res/android"
+    android:color="@color/gray_b2">
+    <!--去掉此item内容就是无界效果-->
+    <item android:drawable="@drawable/white_round_5"/>
+</ripple>

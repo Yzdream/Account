@@ -1,0 +1,300 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="data"
+            type="com.yz.data.bean.Account" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/white_round_3"
+        android:layout_marginStart="@dimen/dp_20"
+        android:layout_marginEnd="@dimen/dp_20">
+
+        <TextView
+            android:id="@+id/tv_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/dp_30"
+            android:text="@string/title"
+            android:textColor="@color/black_252525"
+            android:textSize="@dimen/sp_18" />
+
+        <LinearLayout
+            android:id="@+id/ll_editor"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dp_55"
+            android:layout_marginTop="@dimen/dp_28"
+            android:layout_toEndOf="@+id/tv_title"
+            android:background="@mipmap/icon_update"
+            android:orientation="horizontal"
+            app:isGone="@{data.type}" />
+
+        <RelativeLayout
+            android:id="@+id/ll_name"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/dp_50"
+            android:layout_below="@+id/tv_title"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/dp_30">
+
+            <TextView
+                android:id="@+id/tv_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:text="@string/name"
+                android:textSize="@dimen/sp_15" />
+
+            <EditText
+                android:id="@+id/et_name"
+                android:layout_width="@dimen/dp_200"
+                android:layout_height="@dimen/dp_35"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="@dimen/dp_20"
+                android:layout_toEndOf="@+id/tv_name"
+                android:background="@null"
+                android:gravity="center_vertical"
+                android:hint="@string/name_hint"
+                android:maxLength="10"
+                android:padding="@dimen/dp_5"
+                android:text="@={data.name}"
+                android:textSize="@dimen/sp_13"
+                app:isEnabled="@{data.type}"
+                tools:ignore="Autofill,TextFields" />
+
+            <ImageView
+                android:id="@+id/iv_copy_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="@dimen/dp_10"
+                android:layout_toEndOf="@+id/et_name"
+                android:src="@mipmap/icon_copy"
+                app:isGone="@{data.type}" />
+
+            <View
+                android:layout_width="@dimen/dp_200"
+                android:layout_height="@dimen/dp_1"
+                android:layout_below="@+id/et_name"
+                android:layout_marginStart="@dimen/dp_20"
+                android:layout_toEndOf="@+id/tv_name"
+                android:background="@color/gray_E5E5E5" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/ll_account"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/dp_50"
+            android:layout_below="@+id/ll_name"
+            android:layout_centerHorizontal="true">
+
+            <TextView
+                android:id="@+id/tv_account"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:text="@string/account"
+                android:textSize="@dimen/sp_15" />
+
+            <EditText
+                android:id="@+id/et_account"
+                android:layout_width="@dimen/dp_200"
+                android:layout_height="@dimen/dp_35"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="@dimen/dp_20"
+                android:layout_toEndOf="@+id/tv_account"
+                android:background="@null"
+                android:gravity="center_vertical"
+                android:hint="@string/account_hint"
+                android:maxLines="1"
+                app:isEnabled="@{data.type}"
+                android:padding="@dimen/dp_5"
+                android:text="@={data.account}"
+                android:textSize="@dimen/sp_13"
+                tools:ignore="Autofill,TextFields" />
+
+            <ImageView
+                android:id="@+id/iv_copy_account"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="@dimen/dp_10"
+                android:layout_toEndOf="@+id/et_account"
+                android:src="@mipmap/icon_copy"
+                app:isGone="@{data.type}" />
+
+            <View
+                android:layout_width="@dimen/dp_200"
+                android:layout_height="@dimen/dp_1"
+                android:layout_below="@+id/et_account"
+                android:layout_marginStart="@dimen/dp_20"
+                android:layout_toEndOf="@+id/tv_account"
+                android:background="@color/gray_E5E5E5" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/ll_pwd"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/dp_50"
+            android:layout_below="@+id/ll_account"
+            android:layout_centerHorizontal="true">
+
+            <TextView
+                android:id="@+id/tv_pwd"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:text="@string/pwd"
+                android:textSize="@dimen/sp_15" />
+
+            <EditText
+                android:id="@+id/et_pwd"
+                android:layout_width="@dimen/dp_200"
+                android:layout_height="@dimen/dp_35"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="@dimen/dp_20"
+                android:layout_toEndOf="@+id/tv_pwd"
+                android:background="@null"
+                android:gravity="center_vertical"
+                android:hint="@string/pwd_hint"
+                android:inputType="textPassword"
+                android:maxLines="1"
+                app:isEnabled="@{data.type}"
+                android:padding="@dimen/dp_5"
+                android:text="@={data.password}"
+                android:textSize="@dimen/sp_13"
+                tools:ignore="Autofill,TextFields" />
+
+            <ToggleButton
+                android:id="@+id/text_input_password_toggle"
+                android:layout_width="@dimen/dp_20"
+                android:layout_height="@dimen/dp_20"
+                android:padding="@dimen/dp_10"
+                android:layout_centerVertical="true"
+                android:background="@drawable/sel"
+                android:checked="false"
+                android:layout_toStartOf="@+id/iv_copy_pwd"
+                android:textOff=""
+                android:textOn=""/>
+
+            <ImageView
+                android:id="@+id/iv_copy_pwd"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="@dimen/dp_10"
+                android:layout_toEndOf="@+id/et_pwd"
+                android:src="@mipmap/icon_copy"
+                app:isGone="@{data.type}" />
+
+            <View
+                android:layout_width="@dimen/dp_200"
+                android:layout_height="@dimen/dp_1"
+                android:layout_below="@+id/et_pwd"
+                android:layout_marginStart="@dimen/dp_20"
+                android:layout_toEndOf="@+id/tv_pwd"
+                android:background="@color/gray_E5E5E5" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/ll_remark"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/dp_50"
+            android:layout_below="@+id/ll_pwd"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="@dimen/dp_30">
+
+            <TextView
+                android:id="@+id/tv_remark"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:text="@string/remark"
+                android:textSize="@dimen/sp_15" />
+
+            <EditText
+                android:id="@+id/et_remark"
+                android:layout_width="@dimen/dp_200"
+                android:layout_height="@dimen/dp_35"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="@dimen/dp_20"
+                android:layout_toEndOf="@+id/tv_remark"
+                android:background="@null"
+                android:gravity="center_vertical"
+                android:hint="@string/remark_hint"
+                android:maxLength="10"
+                app:isEnabled="@{data.type}"
+                android:padding="@dimen/dp_5"
+                android:text="@={data.remark}"
+                android:textSize="@dimen/sp_13"
+                tools:ignore="Autofill,TextFields" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="@dimen/dp_10"
+                android:layout_toEndOf="@+id/et_remark"
+                android:src="@mipmap/icon_copy"
+                android:visibility="invisible" />
+
+            <View
+                android:layout_width="@dimen/dp_200"
+                android:layout_height="@dimen/dp_1"
+                android:layout_below="@+id/et_remark"
+                android:layout_marginStart="@dimen/dp_20"
+                android:layout_toEndOf="@+id/tv_remark"
+                android:background="@color/gray_E5E5E5" />
+
+        </RelativeLayout>
+
+        <!--app:isVisibility="@{data.type}"-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_45"
+            android:layout_below="@+id/ll_remark"
+            android:layout_marginTop="@dimen/dp_20"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <TextView
+                android:id="@+id/tv_cancel"
+                android:layout_width="@dimen/dp_0"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/gray_round_left_3"
+                android:gravity="center"
+                android:text="@string/cancel"
+                android:textColor="@color/black_252525"
+                android:textSize="@dimen/sp_16" />
+
+            <TextView
+                android:id="@+id/tv_submit"
+                android:layout_width="@dimen/dp_0"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/green_round_right_3"
+                android:gravity="center"
+                app:setText="@{data.type}"
+                android:textColor="@color/white"
+                android:textSize="@dimen/sp_16" />
+
+        </LinearLayout>
+    </RelativeLayout>
+
+</layout>
+
+

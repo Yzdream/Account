@@ -1,0 +1,23 @@
+<resources>
+    <string name="app_name">密码箱</string>
+
+    <string name="search">搜索</string>
+
+    <string name="empty">空空如也</string>
+    <string name="name">名称：</string>
+    <string name="pwd">密码：</string>
+    <string name="remark">备注：</string>
+    <string name="name_hint">请输入名称(1-10)</string>
+    <string name="pwd_hint">请输入密码</string>
+    <string name="remark_hint">请输入备注(0-10)</string>
+    <string name="title">账号信息</string>
+    <string name="cancel">取消</string>
+    <string name="submit">确定</string>
+    <string name="type">类型：</string>
+    <string name="account">账号：</string>
+    <string name="account_hint">请输入账号</string>
+
+    <string name="lock_title">绘制解锁图案，请至少连接4个点</string>
+    <string name="lock_title1">请绘制解锁图案</string>
+    <string name="lock_tip">请牢记你的密码，否则忘记后无法找回</string>
+</resources>
