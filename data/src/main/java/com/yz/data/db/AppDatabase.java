@@ -9,5 +9,5 @@ public class AppDatabase {
     public static final String NAME = "AppDatabase_account";
 
     // 数据版本
-    public static final int VERSION = 1;
+    public static final int VERSION = 2;
 }

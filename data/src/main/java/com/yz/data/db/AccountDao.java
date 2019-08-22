@@ -22,7 +22,7 @@ public class AccountDao {
     }
 
     public static List<Account> findAllById(String typeId){
-        return SQLite.select().from(Account.class).where(Account_Table.typeId.eq(typeId)).queryList();
+        return SQLite.select().from(Account.class).where(Account_Table.typeId.eq(typeId)).orderBy(Account_Table.isTop,false).queryList();
     }
 
 

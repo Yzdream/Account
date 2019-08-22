@@ -7,9 +7,7 @@ import com.raizlabs.android.dbflow.annotation.Column;
 import com.raizlabs.android.dbflow.annotation.PrimaryKey;
 import com.raizlabs.android.dbflow.annotation.Table;
 import com.yz.data.BR;
-import com.yz.data.db.AccountDao;
 import com.yz.data.db.AppDatabase;
-
 
 import java.util.UUID;
 

@@ -2,7 +2,9 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
+
     <data>
+
         <variable
             name="model"
             type="com.yz.account.viewmodule.LockViewModule" />
@@ -14,41 +16,70 @@
         android:background="@color/white"
         tools:context=".view.LockActivity">
 
+        <LinearLayout
+            android:id="@+id/ll_lock_state"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_50"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:visibility="gone">
+
+            <TextView
+                android:id="@+id/tv_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black_3B3D3C"
+                android:textSize="@dimen/sp_20"
+                tools:text="15s" />
+
+            <TextView
+                android:id="@+id/tv_time_tip"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black_3B3D3C"
+                android:textSize="@dimen/sp_16"
+                android:text="后重试" />
+
+        </LinearLayout>
+
+
         <TextView
             android:id="@+id/tv_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/dp_100"
+            android:text="@string/lock_title"
             android:textColor="@color/black_252525"
             android:textSize="@dimen/sp_16"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            android:text="@string/lock_title" />
+            app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/tv_tip"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/dp_5"
+            android:text="@string/lock_tip"
             android:textColor="@color/gray_b2"
             android:textSize="@dimen/sp_13"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tv_title"
-            android:text="@string/lock_tip" />
+            app:layout_constraintTop_toBottomOf="@+id/tv_title" />
 
         <com.yz.account.widget.LockView
             android:id="@+id/lock_view"
             android:layout_width="match_parent"
             android:layout_height="0dp"
+            app:correctColor="@color/colorPrimary"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_tip"
+            app:lineWidth="@dimen/dp_5"
             app:normalColor="@color/black_3B3D3C_b3"
             app:selectColor="@color/colorPrimaryDark"
-            app:correctColor="@color/colorPrimary"
-            app:wrongColor="@color/colorAccent"
-            app:lineWidth="@dimen/dp_5"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tv_tip" />
+            app:wrongColor="@color/colorAccent" />
 
     </android.support.constraint.ConstraintLayout>
 

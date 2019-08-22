@@ -46,6 +46,8 @@
             android:layout_height="@dimen/dp_50"
             android:layout_below="@+id/tv_title"
             android:layout_centerHorizontal="true"
+            android:paddingStart="@dimen/dp_10"
+            android:paddingEnd="@dimen/dp_10"
             android:layout_marginTop="@dimen/dp_30">
 
             <TextView
@@ -58,10 +60,10 @@
 
             <EditText
                 android:id="@+id/et_name"
-                android:layout_width="@dimen/dp_200"
+                android:layout_width="@dimen/dp_190"
                 android:layout_height="@dimen/dp_35"
                 android:layout_centerVertical="true"
-                android:layout_marginStart="@dimen/dp_20"
+                android:layout_marginStart="@dimen/dp_5"
                 android:layout_toEndOf="@+id/tv_name"
                 android:background="@null"
                 android:gravity="center_vertical"
@@ -75,8 +77,8 @@
 
             <ImageView
                 android:id="@+id/iv_copy_name"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="@dimen/dp_25"
+                android:layout_height="@dimen/dp_25"
                 android:layout_centerVertical="true"
                 android:layout_marginStart="@dimen/dp_10"
                 android:layout_toEndOf="@+id/et_name"
@@ -84,10 +86,10 @@
                 app:isGone="@{data.type}" />
 
             <View
-                android:layout_width="@dimen/dp_200"
+                android:layout_width="@dimen/dp_190"
                 android:layout_height="@dimen/dp_1"
                 android:layout_below="@+id/et_name"
-                android:layout_marginStart="@dimen/dp_20"
+                android:layout_marginStart="@dimen/dp_5"
                 android:layout_toEndOf="@+id/tv_name"
                 android:background="@color/gray_E5E5E5" />
 
@@ -98,6 +100,8 @@
             android:layout_width="wrap_content"
             android:layout_height="@dimen/dp_50"
             android:layout_below="@+id/ll_name"
+            android:paddingStart="@dimen/dp_10"
+            android:paddingEnd="@dimen/dp_10"
             android:layout_centerHorizontal="true">
 
             <TextView
@@ -110,10 +114,10 @@
 
             <EditText
                 android:id="@+id/et_account"
-                android:layout_width="@dimen/dp_200"
+                android:layout_width="@dimen/dp_190"
                 android:layout_height="@dimen/dp_35"
                 android:layout_centerVertical="true"
-                android:layout_marginStart="@dimen/dp_20"
+                android:layout_marginStart="@dimen/dp_5"
                 android:layout_toEndOf="@+id/tv_account"
                 android:background="@null"
                 android:gravity="center_vertical"
@@ -127,8 +131,8 @@
 
             <ImageView
                 android:id="@+id/iv_copy_account"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="@dimen/dp_25"
+                android:layout_height="@dimen/dp_25"
                 android:layout_centerVertical="true"
                 android:layout_marginStart="@dimen/dp_10"
                 android:layout_toEndOf="@+id/et_account"
@@ -136,10 +140,10 @@
                 app:isGone="@{data.type}" />
 
             <View
-                android:layout_width="@dimen/dp_200"
+                android:layout_width="@dimen/dp_190"
                 android:layout_height="@dimen/dp_1"
                 android:layout_below="@+id/et_account"
-                android:layout_marginStart="@dimen/dp_20"
+                android:layout_marginStart="@dimen/dp_5"
                 android:layout_toEndOf="@+id/tv_account"
                 android:background="@color/gray_E5E5E5" />
 
@@ -150,6 +154,8 @@
             android:layout_width="wrap_content"
             android:layout_height="@dimen/dp_50"
             android:layout_below="@+id/ll_account"
+            android:paddingStart="@dimen/dp_10"
+            android:paddingEnd="@dimen/dp_10"
             android:layout_centerHorizontal="true">
 
             <TextView
@@ -162,10 +168,10 @@
 
             <EditText
                 android:id="@+id/et_pwd"
-                android:layout_width="@dimen/dp_200"
+                android:layout_width="@dimen/dp_190"
                 android:layout_height="@dimen/dp_35"
                 android:layout_centerVertical="true"
-                android:layout_marginStart="@dimen/dp_20"
+                android:layout_marginStart="@dimen/dp_5"
                 android:layout_toEndOf="@+id/tv_pwd"
                 android:background="@null"
                 android:gravity="center_vertical"
@@ -192,8 +198,8 @@
 
             <ImageView
                 android:id="@+id/iv_copy_pwd"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="@dimen/dp_25"
+                android:layout_height="@dimen/dp_25"
                 android:layout_centerVertical="true"
                 android:layout_marginStart="@dimen/dp_10"
                 android:layout_toEndOf="@+id/et_pwd"
@@ -201,10 +207,10 @@
                 app:isGone="@{data.type}" />
 
             <View
-                android:layout_width="@dimen/dp_200"
+                android:layout_width="@dimen/dp_190"
                 android:layout_height="@dimen/dp_1"
                 android:layout_below="@+id/et_pwd"
-                android:layout_marginStart="@dimen/dp_20"
+                android:layout_marginStart="@dimen/dp_5"
                 android:layout_toEndOf="@+id/tv_pwd"
                 android:background="@color/gray_E5E5E5" />
 
@@ -216,6 +222,8 @@
             android:layout_height="@dimen/dp_50"
             android:layout_below="@+id/ll_pwd"
             android:layout_centerHorizontal="true"
+            android:paddingStart="@dimen/dp_10"
+            android:paddingEnd="@dimen/dp_10"
             android:layout_marginBottom="@dimen/dp_30">
 
             <TextView
@@ -228,10 +236,10 @@
 
             <EditText
                 android:id="@+id/et_remark"
-                android:layout_width="@dimen/dp_200"
+                android:layout_width="@dimen/dp_190"
                 android:layout_height="@dimen/dp_35"
                 android:layout_centerVertical="true"
-                android:layout_marginStart="@dimen/dp_20"
+                android:layout_marginStart="@dimen/dp_5"
                 android:layout_toEndOf="@+id/tv_remark"
                 android:background="@null"
                 android:gravity="center_vertical"
@@ -244,8 +252,8 @@
                 tools:ignore="Autofill,TextFields" />
 
             <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="@dimen/dp_25"
+                android:layout_height="@dimen/dp_25"
                 android:layout_centerVertical="true"
                 android:layout_marginStart="@dimen/dp_10"
                 android:layout_toEndOf="@+id/et_remark"
@@ -253,10 +261,10 @@
                 android:visibility="invisible" />
 
             <View
-                android:layout_width="@dimen/dp_200"
+                android:layout_width="@dimen/dp_190"
                 android:layout_height="@dimen/dp_1"
                 android:layout_below="@+id/et_remark"
-                android:layout_marginStart="@dimen/dp_20"
+                android:layout_marginStart="@dimen/dp_5"
                 android:layout_toEndOf="@+id/tv_remark"
                 android:background="@color/gray_E5E5E5" />
 
@@ -275,7 +283,7 @@
                 android:layout_width="@dimen/dp_0"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:background="@drawable/gray_round_left_3"
+                android:background="@drawable/gray_ripple_left"
                 android:gravity="center"
                 android:text="@string/cancel"
                 android:textColor="@color/black_252525"
@@ -286,7 +294,7 @@
                 android:layout_width="@dimen/dp_0"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:background="@drawable/green_round_right_3"
+                android:background="@drawable/green_ripple_right"
                 android:gravity="center"
                 app:setText="@{data.type}"
                 android:textColor="@color/white"

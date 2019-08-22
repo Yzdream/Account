@@ -1,9 +1,12 @@
 package com.yz.account.view;
 
+import android.annotation.SuppressLint;
+import android.arch.lifecycle.Observer;
 import android.os.Bundle;
 import android.os.Vibrator;
 import android.support.annotation.Nullable;
 import android.text.TextUtils;
+import android.view.View;
 
 import com.yz.account.R;
 import com.yz.account.base.BaseActivity;
@@ -33,22 +36,35 @@ public class LockActivity extends BaseActivity<ActivityLockBinding, LockViewModu
         mBinding.setModel(mViewModel);
     }
 
+    @SuppressLint("SetTextI18n")
     @Override
     protected void initView(@Nullable Bundle savedInstanceState) {
         super.initView(savedInstanceState);
         mViewModel.getLock();
-        mViewModel.getLockMutableLiveData().observe(this,lock1 -> {
-            if (lock1 == null||TextUtils.isEmpty(lock1.getLock())){
+        mViewModel.getLockMutableLiveData().observe(this, lock1 -> {
+            if (lock1 == null || TextUtils.isEmpty(lock1.getLock())) {
                 //新增
                 mBinding.lockView.setState(true);
                 mBinding.tvTitle.setText(R.string.lock_title);
-            }else{
+            } else {
                 //验证
                 mBinding.tvTitle.setText(R.string.lock_title1);
                 mBinding.lockView.setState(false);
                 lock = lock1.getLock();
+                mViewModel.getIsLockState();
             }
         });
+
+        mViewModel.getIsLock().observe(this, aBoolean -> {
+            if (aBoolean != null) {
+                mBinding.llLockState.setVisibility(aBoolean ? View.VISIBLE : View.GONE);
+            }
+        });
+
+        mViewModel.getLockFailureTime().observe(this, time -> {
+            mBinding.tvTime.setText(time + "s");
+        });
+
         mBinding.lockView.setOnUnlockListener(new LockView.OnUnlockListener() {
             @Override
             public void addError() {
@@ -59,16 +75,16 @@ public class LockActivity extends BaseActivity<ActivityLockBinding, LockViewModu
             @Override
             public void addLock(String result) {
                 mBinding.lockView.reset();
-                if (TextUtils.isEmpty(lock)){
+                if (TextUtils.isEmpty(lock)) {
                     lock = result;
                     ToastHelper.showShortToast("请再试一次，确定图案密码");
-                }else{
-                    if (lock.equals(result)){
+                } else {
+                    if (lock.equals(result)) {
                         ToastHelper.showShortToast("图案密码设置成功");
                         mViewModel.addLock(result);
                         intentActivity(MainActivity.class);
                         finish();
-                    }else{
+                    } else {
                         ToastHelper.showShortToast("两次图案密码不一致，请重新绘制新的图案密码");
                     }
                 }
@@ -81,6 +97,7 @@ public class LockActivity extends BaseActivity<ActivityLockBinding, LockViewModu
 
             @Override
             public void onSuccess() {
+//                mBinding.llLockState.setV
                 mBinding.lockView.reset();
                 intentActivity(MainActivity.class);
                 finish();
@@ -90,14 +107,21 @@ public class LockActivity extends BaseActivity<ActivityLockBinding, LockViewModu
             public void onFailure() {
                 ToastHelper.showShortToast("图案密码错误！");
                 mBinding.lockView.reset();
+//                mViewModel.onLockFailure();
                 // 震动效果的系统服务
-                if (vibrator==null) {
+                if (vibrator == null) {
                     vibrator = (Vibrator) getSystemService(VIBRATOR_SERVICE);
                 }
-                if (vibrator!=null) {
+                if (vibrator != null) {
                     vibrator.vibrate(200);
                 }
             }
         });
+    }
+
+    @Override
+    protected void onDestroy() {
+        mViewModel.onDestory();
+        super.onDestroy();
     }
 }

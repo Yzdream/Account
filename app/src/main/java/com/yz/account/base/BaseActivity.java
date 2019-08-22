@@ -10,6 +10,7 @@ import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.text.TextUtils;
 
+import com.yz.account.uitls.Density;
 import com.yz.account.uitls.ToastHelper;
 
 
@@ -28,6 +29,8 @@ public abstract class BaseActivity<mBinding extends ViewDataBinding, mViewModel 
         super.onCreate(savedInstanceState);
         // 在界面未初始化之前调用的初始化窗口
         initWidows();
+        //是否使用适配方案
+        if(initDensity()) Density.setDefault(this);
         // 得到界面Id并设置到Activity界面中
         mBinding = DataBindingUtil.setContentView(this, getContentLayoutId());
         if (mBinding != null) {
